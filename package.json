@@ -1,0 +1,26 @@
+{
+    "name": "vscode-graphql",
+    "displayName": "vscode-graphql",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "idk",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "graphql",
+            "aliases": ["GraphQL", "graphql"],
+            "extensions": [".graphql"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "graphql",
+            "scopeName": "source.graphql",
+            "path": "./syntaxes/graphql.tmLanguage.json"
+        }]
+    }
+}
