@@ -1,0 +1,64 @@
+query SomeQuery(
+  $id: int64!, # test
+  $ss: sss = 123123,
+) {
+  app(id: $id) {
+    id
+    appVersion @skip(if: 2)
+    appType @include
+    pushState
+    mobileFirmwareId
+    deviceModel {
+      ss
+    }
+    deviceName
+    someVersion: version(x: -50.220e2)
+    someOtherVersion: version(y: true)
+  }
+  sss(s: 2)
+}
+
+query HeroNameAndFriends($episode: Episode = "JE\nDI\u00A9") {
+  hero(episode: $episode) {
+    name
+    enums(s: ENUM)
+    lists(s: [1, 2, 3])
+    objects(location: { lon: 12.43, lat: -53.211 })
+    enums(s: "thing")
+    enums(s: null)
+    enums(s: true)
+    friends {
+      name
+      ... Thing
+      ... sss
+      ... on User {
+        friends {
+          count
+        }
+      }
+    }
+  }
+}
+
+fragment Chart on DriverHosChart {
+  hero(episode: $episode) {
+    name
+    enums(s: ENUM)
+    lists(s: [1, 2, 3])
+    objects(location: { lon: 12.43, lat: -53.211 })
+    enums(s: "thing")
+    enums(s: null)
+    enums(s: true)
+    friends {
+      name
+      ... Thing
+      ... sss
+      ... on User {
+        friends {
+          count
+        }
+      }
+    }
+  }
+}
+
