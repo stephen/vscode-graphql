@@ -17,16 +17,16 @@
     {
       "include": "#variable-declarations"
     },
-		{
-			"include": "#type-condition"
-		}
+    {
+      "include": "#type-condition"
+    }
   ],
   "repository": {
     "comment": {
       "name": "comment.line.number-sign.graphql",
       "match": "#.*$"
     },
-		"string": {
+    "string": {
       "name": "string.quoted.double",
       "begin": "\"",
       "end": "\"",
@@ -36,43 +36,43 @@
         }
       ]
     },
-		"escapedCharacter": {
-			"name": "constant.character.escape",
-			"match": "\\\\(u[0-9A-Fa-f]{4}|[\"\\\\/bfnrt])"
-		},
-		"number": {
+    "escapedCharacter": {
+      "name": "constant.character.escape",
+      "match": "\\\\(u[0-9A-Fa-f]{4}|[\"\\\\/bfnrt])"
+    },
+    "number": {
       "name": "constant.numeric",
       "match": "(\\-?)\\d+\\.?\\d*[eE]?[\\+\\-]?\\d*",
-			"captures": {
-				"1": {
-					"name": "keyword.operator"
-				}
-			}
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
+        }
+      }
     },
-		"boolean": {
+    "boolean": {
       "name": "constant.language.boolean",
-			"match": "(true|false)"
+      "match": "(true|false)"
     },
-		"null": {
+    "null": {
       "name": "constant.language.null",
-			"match": "null"
+      "match": "null"
     },
     "enum": {
       "name": "support.constant.enum",
       "match": "[_A-Za-z][_0-9A-Za-z]*"
     },
-		"directive": {
-			"name": "meta.directive.graphql",
-			"match": "(@)\\s*([_A-Za-z][_0-9A-Za-z]*)",
-			"captures": {
-				"1": {
-					"name": "keyword.operator"
-				},
-				"2": {
+    "directive": {
+      "name": "meta.directive.graphql",
+      "match": "(@)\\s*([_A-Za-z][_0-9A-Za-z]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
+        },
+        "2": {
           "name": "entity.name.function"
-				}
-			}
-		},
+        }
+      }
+    },
     "operation": {
       "name": "meta.operation.graphql",
       "match": "(query|mutation|subscription)\\s*([_A-Za-z][_0-9A-Za-z]*)",
@@ -109,18 +109,18 @@
         }
       }
     },
-		"type-condition": {
+    "type-condition": {
       "name": "meta.type-condition.graphql",
-			"match": "(on)\\s+([_A-Za-z][_0-9A-Za-z]*)",
+      "match": "(on)\\s+([_A-Za-z][_0-9A-Za-z]*)",
       "captures": {
         "1": {
           "name": "keyword.operator"
         },
         "2": {
-		      "name": "entity.name.type"
+          "name": "entity.name.type"
         }
       }
-		},
+    },
     "variable-declarations": {
       "name": "meta.variable-declarations",
       "begin": "\\(",
@@ -153,11 +153,11 @@
     "variable-type": {
       "name": "meta.variable-type.graphql",
       "match": ":\\s*([_A-Za-z][_0-9A-Za-z]*)",
-			"captures": {
-	      "1": {
-					"name": "entity.name.type"
-				}
-			}
+      "captures": {
+        "1": {
+          "name": "entity.name.type"
+        }
+      }
     },
     "variable-bang": {
       "name": "keyword.operator",
@@ -175,24 +175,24 @@
         {
           "include": "#comment"
         },
-				{
-					"include": "#selection-set"
-				},
-				{
-					"include": "#fragment-spread"
-				},
-				{
-					"include": "#type-condition"
-				},
-				{
-					"include": "#directive"
-				},
-				{
-					"include": "#arguments"
-				},
-				{
-					"include": "#alias"
-				}
+        {
+          "include": "#selection-set"
+        },
+        {
+          "include": "#fragment-spread"
+        },
+        {
+          "include": "#type-condition"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#arguments"
+        },
+        {
+          "include": "#alias"
+        }
       ]
     },
     "arguments": {
@@ -200,17 +200,17 @@
       "begin": "\\(",
       "end": "\\)",
       "patterns": [
-				{
-					"include": "#value"
-				},
-				{
-					"include": "#comment"
-				}
+        {
+          "include": "#value"
+        },
+        {
+          "include": "#comment"
+        }
       ]
     },
-		"value": {
-			"name": "meta.value.graphql",
-			"patterns": [
+    "value": {
+      "name": "meta.value.graphql",
+      "patterns": [
         {
           "include": "#variable-name"
         },
@@ -223,34 +223,34 @@
         {
           "include": "#number"
         },
-				{
-					"include": "#boolean"
-				},
-				{
-					"include": "#null"
-				},
-				{
-					"include": "#enum"
-				}
-			]
-		},
+        {
+          "include": "#boolean"
+        },
+        {
+          "include": "#null"
+        },
+        {
+          "include": "#enum"
+        }
+      ]
+    },
     "argument": {
       "name": "variable.parameter",
       "match": "[_A-Za-z][_0-9A-Za-z]*(\\s*:)",
-			"captures": {
-				"1": {
-		      "name": "keyword.operator"
-				}
-			}
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
+        }
+      }
     },
     "alias": {
       "name": "entity.section",
       "match": "[_A-Za-z][_0-9A-Za-z]*(\\s*:)",
-			"captures": {
-				"1": {
-		      "name": "keyword.operator"
-				}
-			}
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
+        }
+      }
     }
   },
   "scopeName": "source.graphql"

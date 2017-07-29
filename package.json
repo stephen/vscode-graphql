@@ -1,42 +1,37 @@
 {
-    "name": "vscode-graphql",
-    "author": "Stephen Wan <stephen@stephenwan.com>",
-    "license": "MIT",
-    "repository": "git@github.com:stephen/vscode-graphql.git",
-    "displayName": "vscode-graphql",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "stpn",
-    "engines": {
-        "vscode": "^1.13.0"
-    },
-    "categories": [
-        "Languages"
+  "name": "vscode-graphql",
+  "author": "Stephen Wan <stephen@stephenwan.com>",
+  "license": "MIT",
+  "repository": "git@github.com:stephen/vscode-graphql.git",
+  "displayName": "vscode-graphql",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "stpn",
+  "engines": {
+    "vscode": "^1.13.0"
+  },
+  "categories": ["Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "graphql",
+        "aliases": ["GraphQL", "graphql"],
+        "extensions": [".graphql"],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "graphql",
-                "aliases": [
-                    "GraphQL",
-                    "graphql"
-                ],
-                "extensions": [
-                    ".graphql"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "graphql",
-                "scopeName": "source.graphql",
-                "path": "./syntaxes/graphql.tmLanguage.json"
-            }
-        ]
-    },
-    "dependencies": {
-        "graphql": "^0.10.3",
-        "graphql-language-service": "^0.0.34"
-    }
+    "grammars": [
+      {
+        "language": "graphql",
+        "scopeName": "source.graphql",
+        "path": "./syntaxes/graphql.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "graphql": "^0.10.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.5.3"
+  }
 }
