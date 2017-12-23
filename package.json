@@ -43,8 +43,9 @@
   "activationEvents": ["onLanguage:graphql"],
   "main": "./bin/client/extension",
   "dependencies": {
+    "@types/graphql": "^0.11.7",
     "@types/node": "^8.5.2",
-    "graphql": "^0.10.3",
+    "graphql": "^0.12.3",
     "vscode": "^1.1.10",
     "vscode-languageclient": "^3.5.0",
     "vscode-languageserver": "^3.5.0"

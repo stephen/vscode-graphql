@@ -12,13 +12,14 @@ import {
   CompletionItem,
   CompletionItemKind,
 } from "vscode-languageserver";
+import * as graphql from "graphql";
 
-let connection: IConnection = createConnection(
+const connection: IConnection = createConnection(
   new IPCMessageReader(process),
   new IPCMessageWriter(process),
 );
 
-let documents: TextDocuments = new TextDocuments();
+const documents: TextDocuments = new TextDocuments();
 documents.listen(connection);
 
 let workspaceRoot: string;
@@ -63,27 +64,32 @@ connection.onDidChangeConfiguration(change => {
 });
 
 function validateTextDocument(textDocument: TextDocument): void {
-  let diagnostics: Diagnostic[] = [];
-  let lines = textDocument.getText().split(/\r?\n/g);
-  let problems = 0;
-  for (var i = 0; i < lines.length && problems < maxNumberOfProblems; i++) {
-    let line = lines[i];
-    let index = line.indexOf("typescript");
-    if (index >= 0) {
-      problems++;
+  const diagnostics: Diagnostic[] = [];
+  try {
+    const doc = graphql.parse(textDocument.getText());
+  } catch (err) {
+    if (err instanceof graphql.GraphQLError) {
       diagnostics.push({
-        severity: DiagnosticSeverity.Warning,
+        severity: DiagnosticSeverity.Error,
         range: {
-          start: { line: i, character: index },
-          end: { line: i, character: index + 10 },
+          start: {
+            line: err.locations[0].line - 1,
+            character: err.locations[0].column,
+          },
+          end: {
+            line: err.locations[0].line - 1,
+            character: 0,
+          },
         },
-        message: `${line.substr(index, 10)} should be spelled TypeScript`,
-        source: "ex",
+        message: err.message,
       });
+    } else {
+      throw err;
     }
+
+    connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
+    return;
   }
-  // Send the computed diagnostics to VSCode.
-  connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
 }
 
 connection.onDidChangeWatchedFiles(_change => {
