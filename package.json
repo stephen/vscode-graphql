@@ -8,7 +8,7 @@
   "version": "0.0.1",
   "publisher": "stpn",
   "engines": {
-    "vscode": "^1.13.0"
+    "vscode": "^1.15.0"
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
@@ -41,10 +41,13 @@
     ]
   },
   "activationEvents": ["onLanguage:graphql"],
-  "main": "./bin/extension",
+  "main": "./bin/client/extension",
   "dependencies": {
+    "@types/node": "^8.5.2",
     "graphql": "^0.10.3",
-    "vscode": "^1.1.10"
+    "vscode": "^1.1.10",
+    "vscode-languageclient": "^3.5.0",
+    "vscode-languageserver": "^3.5.0"
   },
   "devDependencies": {
     "prettier": "^1.5.3"
