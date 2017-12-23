@@ -1,13 +1,19 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "[typescript]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   },
   "[javascript]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   },
   "[json]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   },
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "files.exclude": {
+    "bin": false
+  },
+  "search.exclude": {
+    "bin": true
+  }
 }

@@ -10,8 +10,20 @@
   "engines": {
     "vscode": "^1.13.0"
   },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "watch:compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
   "categories": ["Languages"],
   "contributes": {
+    "commands": [
+      {
+        "command": "extension.sayHello",
+        "title": "Hello World"
+      }
+    ],
     "languages": [
       {
         "id": "graphql",
@@ -28,8 +40,11 @@
       }
     ]
   },
+  "activationEvents": ["onLanguage:graphql"],
+  "main": "./bin/extension",
   "dependencies": {
-    "graphql": "^0.10.3"
+    "graphql": "^0.10.3",
+    "vscode": "^1.1.10"
   },
   "devDependencies": {
     "prettier": "^1.5.3"

@@ -1,0 +1,7 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./bin/",
+    "sourceMap": true
+  }
+}
