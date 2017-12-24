@@ -2,7 +2,7 @@
   "name": "vscode-graphql",
   "author": "Stephen Wan <stephen@stephenwan.com>",
   "license": "MIT",
-  "repository": "git@github.com:stephen/vscode-graphql.git",
+  "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "vscode-graphql",
   "description": "",
   "version": "0.0.1",
@@ -18,12 +18,16 @@
   },
   "categories": ["Languages"],
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.sayHello",
-        "title": "Hello World"
+    "configuration": {
+      "title": "GraphQL Configuration",
+      "properties": {
+        "graphql.useLanguageServer": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use the graphql-language-service to provide autocomplete, go to definition, and diagnostics. Requires a .graphqlconfig file."
+        }
       }
-    ],
+    },
     "languages": [
       {
         "id": "graphql",
