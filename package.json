@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "vscode-graphql",
-  "description": "",
+  "description": "GraphQL autocomplete, diagnostics, go to definition, and syntax highlighting.",
   "version": "0.1.1",
   "publisher": "stpn",
   "engines": {
