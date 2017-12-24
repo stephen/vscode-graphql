@@ -58,5 +58,10 @@
   },
   "devDependencies": {
     "prettier": "^1.5.3"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#171E26",
+    "theme": "dark"
   }
 }
