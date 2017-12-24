@@ -5,7 +5,7 @@
   "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "vscode-graphql",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "stpn",
   "engines": {
     "vscode": "^1.18.0"
