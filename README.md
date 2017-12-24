@@ -1,13 +1,22 @@
 # vscode-graphql
-Syntax highlighting for `.graphql` files.
+Syntax highlighting, diagnostics, autocomplete, and go to definition for `.graphql` files.
 
 ## Features
-- Just syntax highlighting
+- Syntax highlighting
+- Autocomplete
+- Go to definition
+- Error diagnostics
 
-## Requirements
+Autocomplete, go to definition, and diagnostics are language server features supported by the [graphql-language-service](https://github.com/graphql/graphql-language-service/).
 
-None yet
+## Configuration
+You can specify a schema to validate files against using a `.graphqlconfig` file. Without it, this extension will not provide any langauge server features.
 
-## Extension Settings
+Example:
+```json
+{
+  "schemaPath": "./schema.json"
+}
+```
 
-No settings
+See [here](https://github.com/graphcool/graphql-config#usage) for more detail.
