@@ -1,0 +1,11 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./bin/",
+    "sourceMap": true,
+    "lib": [
+      "es2015",
+      "esnext.asynciterable"
+    ]
+  }
+}

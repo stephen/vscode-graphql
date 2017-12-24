@@ -2,16 +2,32 @@
   "name": "vscode-graphql",
   "author": "Stephen Wan <stephen@stephenwan.com>",
   "license": "MIT",
-  "repository": "git@github.com:stephen/vscode-graphql.git",
+  "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "vscode-graphql",
   "description": "",
   "version": "0.0.1",
   "publisher": "stpn",
   "engines": {
-    "vscode": "^1.13.0"
+    "vscode": "^1.18.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "watch:compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
   },
   "categories": ["Languages"],
   "contributes": {
+    "configuration": {
+      "title": "GraphQL Configuration",
+      "properties": {
+        "graphql.useLanguageServer": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use the graphql-language-service to provide autocomplete, go to definition, and diagnostics. Requires a .graphqlconfig file."
+        }
+      }
+    },
     "languages": [
       {
         "id": "graphql",
@@ -28,8 +44,17 @@
       }
     ]
   },
+  "activationEvents": ["onLanguage:graphql"],
+  "main": "./bin/client/extension",
   "dependencies": {
-    "graphql": "^0.10.3"
+    "@types/graphql": "^0.11.7",
+    "@types/node": "^8.5.2",
+    "babel-polyfill": "^6.26.0",
+    "graphql": "^0.12.3 || ^0.11.7",
+    "graphql-language-service-server": "^1.0.16",
+    "vscode": "^1.1.10",
+    "vscode-languageclient": "^3.5.0",
+    "vscode-languageserver": "^3.5.0"
   },
   "devDependencies": {
     "prettier": "^1.5.3"
