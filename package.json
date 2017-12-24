@@ -3,7 +3,7 @@
   "author": "Stephen Wan <stephen@stephenwan.com>",
   "license": "MIT",
   "repository": "https://github.com/stephen/vscode-graphql.git",
-  "displayName": "vscode-graphql",
+  "displayName": "GraphQL Language Support",
   "description": "GraphQL autocomplete, diagnostics, go to definition, and syntax highlighting.",
   "version": "0.1.2",
   "publisher": "stpn",
