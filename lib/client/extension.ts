@@ -7,6 +7,7 @@ import {
   ServerOptions,
   TransportKind,
 } from "vscode-languageclient";
+import { disconnect } from "cluster";
 
 function getConfig() {
   return workspace.getConfiguration(
@@ -58,14 +59,19 @@ export function activate(context: ExtensionContext) {
     synchronize: {
       fileEvents: workspace.createFileSystemWatcher("**/*.graphql"),
     },
+    outputChannelName: "graphql language server",
   };
 
-  let disposable = new LanguageClient(
+  const client = new LanguageClient(
     "graphql",
     "GraphQL Language Server",
     serverOptions,
     clientOptions,
-  ).start();
+    true,
+  );
+
+  const disposable = client.start();
+  client.outputChannel.show();
 
   context.subscriptions.push(disposable);
 }
