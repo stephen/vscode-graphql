@@ -133,6 +133,9 @@
           "include": "#variable-type"
         },
         {
+          "include": "#variable-array"
+        },
+        {
           "include": "#variable-bang"
         },
         {
@@ -167,6 +170,19 @@
           "name": "entity.name.type"
         }
       }
+    },
+    "variable-array": {
+      "name": "meta.variable-array.graphql",
+      "begin": "\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#variable-type"
+        },
+        {
+          "include": "#variable-bang"
+        }
+      ]
     },
     "variable-bang": {
       "name": "keyword.operator",
