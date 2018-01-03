@@ -6,6 +6,9 @@
       "include": "#comment"
     },
     {
+      "include": "#type-declaration"
+    },
+    {
       "include": "#operation"
     },
     {
@@ -70,6 +73,57 @@
         },
         "2": {
           "name": "entity.name.function"
+        }
+      }
+    },
+    "type-declaration": {
+      "name": "meta.type-declaration.graphql",
+      "begin": "(type)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+((@)\\s*([_A-Za-z][_0-9A-Za-z]*))?\\s*\\{",
+      "end": "\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type"
+        },
+        "2": {
+          "name": "entity.name.type"
+        },
+        "4": {
+          "name": "keyword.operator"
+        },
+        "5": {
+          "name": "entity.name.function"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#arguments"
+        },
+        {
+          "include": "#type-field"
+        },
+        {
+          "include": "#variable-type"
+        },
+        {
+          "include": "#variable-array"
+        },
+        {
+          "include": "#variable-bang"
+        }
+      ]
+    },
+    "type-field": {
+      "name": "entity.section",
+      "match": "[_A-Za-z][_0-9A-Za-z]*(\\s*:)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
         }
       }
     },
