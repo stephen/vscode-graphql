@@ -1,7 +1,12 @@
 # Change Log
 All notable changes to the "vscode-graphql" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.1.4
+- Fix Comment Selection support (#5).
 
-## [Unreleased]
+## 0.1.0
+- Support for language service features using [graphql-language-service](https://github.com/graphql/graphql-language-service/)
+
+## 0.0.1
 - Initial release
+- Syntax highlighting support
