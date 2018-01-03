@@ -9,6 +9,9 @@
       "include": "#type-declaration"
     },
     {
+      "include": "#enum-declaration"
+    },
+    {
       "include": "#operation"
     },
     {
@@ -75,6 +78,24 @@
           "name": "entity.name.function"
         }
       }
+    },
+    "enum-declaration": {
+      "name": "meta.enum-declaration.graphql",
+      "begin": "(enum)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+\\{",
+      "end": "\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type"
+        },
+        "2": {
+          "name": "entity.name.type"
+        }
+      },
+      "patterns": [
+        {
+          "name": "enum"
+        }
+      ]
     },
     "type-declaration": {
       "name": "meta.type-declaration.graphql",
