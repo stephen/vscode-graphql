@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "vscode-graphql" extension will be documented in this file.
 
+## 0.1.5
+- Upgrade graphql-language-service-server to 1.0.18.
+
 ## 0.1.4
 - Fix Comment Selection support (#5).
 
