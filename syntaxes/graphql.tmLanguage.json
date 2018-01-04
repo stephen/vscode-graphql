@@ -72,7 +72,7 @@
       "match": "(@)\\s*([_A-Za-z][_0-9A-Za-z]*)",
       "captures": {
         "1": {
-          "name": "keyword.operator"
+          "name": "entity.name.function"
         },
         "2": {
           "name": "entity.name.function"
@@ -109,7 +109,7 @@
           "name": "entity.name.type"
         },
         "4": {
-          "name": "keyword.operator"
+          "name": "entity.name.function"
         },
         "5": {
           "name": "entity.name.function"
