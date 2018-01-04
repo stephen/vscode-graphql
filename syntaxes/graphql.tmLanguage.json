@@ -6,6 +6,12 @@
       "include": "#comment"
     },
     {
+      "include": "#type-declaration"
+    },
+    {
+      "include": "#enum-declaration"
+    },
+    {
       "include": "#operation"
     },
     {
@@ -66,10 +72,79 @@
       "match": "(@)\\s*([_A-Za-z][_0-9A-Za-z]*)",
       "captures": {
         "1": {
-          "name": "keyword.operator"
+          "name": "entity.name.function"
         },
         "2": {
           "name": "entity.name.function"
+        }
+      }
+    },
+    "enum-declaration": {
+      "name": "meta.enum-declaration.graphql",
+      "begin": "(enum)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+\\{",
+      "end": "\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type"
+        },
+        "2": {
+          "name": "entity.name.type"
+        }
+      },
+      "patterns": [
+        {
+          "name": "enum"
+        }
+      ]
+    },
+    "type-declaration": {
+      "name": "meta.type-declaration.graphql",
+      "begin": "(type|interface)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+((@)\\s*([_A-Za-z][_0-9A-Za-z]*))?\\s*\\{",
+      "end": "\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type"
+        },
+        "2": {
+          "name": "entity.name.type"
+        },
+        "4": {
+          "name": "entity.name.function"
+        },
+        "5": {
+          "name": "entity.name.function"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#arguments"
+        },
+        {
+          "include": "#type-field"
+        },
+        {
+          "include": "#variable-type"
+        },
+        {
+          "include": "#variable-array"
+        },
+        {
+          "include": "#variable-bang"
+        }
+      ]
+    },
+    "type-field": {
+      "name": "entity.section",
+      "match": "[_A-Za-z][_0-9A-Za-z]*(\\s*:)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
         }
       }
     },
@@ -127,10 +202,13 @@
       "end": "\\)",
       "patterns": [
         {
-          "include": "#variable-name"
+          "include": "#variable-declaration"
         },
         {
           "include": "#variable-type"
+        },
+        {
+          "include": "#variable-array"
         },
         {
           "include": "#variable-bang"
@@ -146,18 +224,40 @@
         }
       ]
     },
+    "variable-declaration": {
+      "name": "variable.parameter",
+      "match": "\\$[_A-Za-z][_0-9A-Za-z]*(\\s*:)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator"
+        }
+      }
+    },
     "variable-name": {
       "name": "variable.parameter",
       "match": "\\$[_A-Za-z][_0-9A-Za-z]*"
     },
     "variable-type": {
       "name": "meta.variable-type.graphql",
-      "match": ":\\s*([_A-Za-z][_0-9A-Za-z]*)",
+      "match": "([_A-Za-z][_0-9A-Za-z]*)",
       "captures": {
         "1": {
           "name": "entity.name.type"
         }
       }
+    },
+    "variable-array": {
+      "name": "meta.variable-array.graphql",
+      "begin": "\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#variable-type"
+        },
+        {
+          "include": "#variable-bang"
+        }
+      ]
     },
     "variable-bang": {
       "name": "keyword.operator",
