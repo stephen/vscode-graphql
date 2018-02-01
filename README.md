@@ -16,7 +16,7 @@ Autocomplete, go to definition, and diagnostics are language server features sup
 Watchman is currently a dependency of `graphql-language-service`. See [issue #8](https://github.com/stephen/vscode-graphql/issues/8).
 
 ## Configuration
-To turn on language server features, you can enable the `graphql.useLanguageServer` flag in your settings.
+Language server features will be enabled when a `.graphqlconfig` file is found in the project.
 
 Using the language server will require a schema to be specified via a `.graphqlconfig` file.
 

@@ -18,16 +18,6 @@
   },
   "categories": ["Languages"],
   "contributes": {
-    "configuration": {
-      "title": "GraphQL Configuration",
-      "properties": {
-        "graphql.useLanguageServer": {
-          "type": "boolean",
-          "default": false,
-          "description": "Use the graphql-language-service to provide autocomplete, go to definition, and diagnostics. Requires a .graphqlconfig file."
-        }
-      }
-    },
     "languages": [
       {
         "id": "graphql",
@@ -44,7 +34,7 @@
       }
     ]
   },
-  "activationEvents": ["onLanguage:graphql"],
+  "activationEvents": ["workspaceContains:**/.graphqlconfig"],
   "main": "./bin/client/extension",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
