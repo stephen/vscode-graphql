@@ -43,7 +43,9 @@ export function activate(context: ExtensionContext) {
     path.join("bin/server", "server.js"),
   );
 
-  let debugOptions = { execArgv: ["--nolazy", "--debug=6009"] };
+  let debugOptions = {
+    execArgv: ["--nolazy", "--debug=6009", "--inspect=localhost:6009"],
+  };
 
   let serverOptions: ServerOptions = {
     run: { module: serverModule, transport: TransportKind.ipc },
