@@ -5,7 +5,7 @@
   "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "GraphQL Language Support",
   "description": "GraphQL autocomplete, diagnostics, go to definition, and syntax highlighting.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "publisher": "stpn",
   "engines": {
     "vscode": "^1.18.0"
@@ -16,9 +16,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
-  "categories": [
-    "Languages"
-  ],
+  "categories": ["Languages"],
   "contributes": {
     "configuration": {
       "title": "GraphQL Configuration",
@@ -33,13 +31,8 @@
     "languages": [
       {
         "id": "graphql",
-        "aliases": [
-          "GraphQL",
-          "graphql"
-        ],
-        "extensions": [
-          ".graphql"
-        ],
+        "aliases": ["GraphQL", "graphql"],
+        "extensions": [".graphql"],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -51,9 +44,7 @@
       }
     ]
   },
-  "activationEvents": [
-    "onLanguage:graphql"
-  ],
+  "activationEvents": ["onLanguage:graphql"],
   "main": "./bin/client/extension",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
