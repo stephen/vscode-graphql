@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "vscode-graphql" extension will be documented in this file.
 
+## 0.1.9
+- Upgrade graphql-language-service-server to [^1.1.1](https://github.com/stephen/vscode-graphql/pull/17#issuecomment-382351983)
+
 ## 0.1.8
 - Support debugging in node 7.7+ (https://github.com/stephen/vscode-graphql/pull/14)
 
