@@ -1,6 +1,7 @@
 {
     "comments": {
         "lineComment": "#",
+        "blockComment": ["\"\"\"", "\"\"\""]
     },
     // symbols used as brackets
     "brackets": [
@@ -13,7 +14,7 @@
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
-        ["\"", "\""],
+        { "open": "\"", "close": "\"", "notIn": ["string", "comment"] },
         ["'", "'"]
     ],
     // symbols that that can be used to surround a selection

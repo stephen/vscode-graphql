@@ -6,6 +6,9 @@
       "include": "#comment"
     },
     {
+      "include": "#comment-multiline"
+    },
+    {
       "include": "#type-declaration"
     },
     {
@@ -31,6 +34,11 @@
     "comment": {
       "name": "comment.line.number-sign.graphql",
       "match": "#.*$"
+    },
+    "comment-multiline": {
+      "name": "comment.block.graphql",
+      "begin": "\"\"\"",
+      "end": "\"\"\""
     },
     "string": {
       "name": "string.quoted.double",
