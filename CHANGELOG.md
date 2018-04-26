@@ -1,8 +1,11 @@
 # Change Log
-All notable changes to the "vscode-graphql" extension will be documented in this file.
 
-## 0.1.9
-- Upgrade graphql-language-service-server to [^1.1.1](https://github.com/stephen/vscode-graphql/pull/17#issuecomment-382351983)
+## 0.2.0
+- Upgrade graphql-language-service-server to [^1.1.2](https://github.com/stephen/vscode-graphql/pull/19) (thanks @lostplan, @mgadda)
+  - Add support for `textDocument/hover`
+  - Add support for online schemas, configurable via [`.graphqlconfig`](https://github.com/graphcool/graphql-config)
+  - Remove watchman requirement
+- Stop opening debug console on startup
 
 ## 0.1.8
 - Support debugging in node 7.7+ (https://github.com/stephen/vscode-graphql/pull/14)

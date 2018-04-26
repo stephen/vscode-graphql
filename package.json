@@ -5,7 +5,7 @@
   "repository": "https://github.com/stephen/vscode-graphql.git",
   "displayName": "GraphQL Language Support",
   "description": "GraphQL autocomplete, diagnostics, go to definition, and syntax highlighting.",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "publisher": "stpn",
   "engines": {
     "vscode": "^1.18.0"
