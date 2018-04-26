@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.2.1
+- Add support for `.gql` extensions
+
 ## 0.2.0
 - Upgrade graphql-language-service-server to [^1.1.2](https://github.com/stephen/vscode-graphql/pull/19) (thanks @lostplan, @mgadda)
   - Add support for `textDocument/hover`
