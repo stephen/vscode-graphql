@@ -32,7 +32,7 @@
       {
         "id": "graphql",
         "aliases": ["GraphQL", "graphql"],
-        "extensions": [".graphql"],
+        "extensions": [".graphql", ".gql"],
         "configuration": "./language-configuration.json"
       }
     ],

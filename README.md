@@ -1,5 +1,5 @@
 # vscode-graphql
-Syntax highlighting, diagnostics, autocomplete, and go to definition for `.graphql` files.
+Syntax highlighting, diagnostics, autocomplete, and go to definition for `.graphql` / `.gql` files.
 
 ## Features
 - Syntax highlighting
