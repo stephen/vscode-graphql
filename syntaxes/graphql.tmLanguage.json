@@ -12,6 +12,9 @@
       "include": "#type-declaration"
     },
     {
+      "include": "#scalar-declaration"
+    },
+    {
       "include": "#enum-declaration"
     },
     {
@@ -104,6 +107,18 @@
           "name": "enum"
         }
       ]
+    },
+    "scalar-declaration": {
+      "name": "meta.scalar-declaration.graphql",
+      "match": "(scalar)\\s+([_A-Za-z][_0-9A-Za-z]+)",
+      "captures": {
+        "1": {
+          "name": "storage.type"
+        },
+        "2": {
+          "name": "entity.name.type"
+        }
+      }
     },
     "type-declaration": {
       "name": "meta.type-declaration.graphql",
