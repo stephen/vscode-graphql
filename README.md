@@ -10,10 +10,12 @@ Syntax highlighting, diagnostics, autocomplete, and go to definition for `.graph
 Autocomplete, go to definition, and diagnostics are language server features supported by the [graphql-language-service](https://github.com/graphql/graphql-language-service/).
 
 ## Installation
-1. Install [stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql) from the marketplace
-2. Install [watchman](https://facebook.github.io/watchman/docs/install.html), if using language service features (see below).
 
-Watchman is currently a dependency of `graphql-language-service`. See [issue #8](https://github.com/stephen/vscode-graphql/issues/8).
+Install [stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql) from the marketplace or from the command line with:
+
+```
+code --install-extension stpn.vscode-graphql
+```
 
 ## Configuration
 To turn on language server features, you can enable the `graphql.useLanguageServer` flag in your settings.
