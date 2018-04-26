@@ -620,9 +620,9 @@ graphql-language-service-parser@^1.1.0:
     graphql-config "1.1.4"
     graphql-language-service-types "^1.1.0"
 
-graphql-language-service-server@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/graphql-language-service-server/-/graphql-language-service-server-1.1.1.tgz#311a8d4ee82e23e050643900f0fd01da8fc11a54"
+graphql-language-service-server@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-server/-/graphql-language-service-server-1.1.2.tgz#a4ec588e9e5a57087bfc264f55b7f61ccf925f6c"
   dependencies:
     babylon "^6.17.4"
     fb-watchman "^2.0.0"
