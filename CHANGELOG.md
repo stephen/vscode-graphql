@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.2.3
+- Remove `graphql.useLanguageServer` setting. Instead, the extension will be automatically started if a [`.graphqlconfig`](https://github.com/graphcool/graphql-config) file is detected in the workspace.
+
 ## 0.2.2
 - Add support for syntax highlighting `"""` declarations ([#11](https://github.com/stephen/vscode-graphql/issues/11))
 - Add support for syntax highlighting `input` and `scalar` types ([#11](https://github.com/stephen/vscode-graphql/issues/11))
