@@ -18,7 +18,7 @@ code --install-extension stpn.vscode-graphql
 ```
 
 ## Configuration
-To turn on language server features, you can enable the `graphql.useLanguageServer` flag in your settings.
+Language server features will be enabled when a `.graphqlconfig` file is found in the project.
 
 Using the language server will require a schema to be specified via a `.graphqlconfig` file.
 
