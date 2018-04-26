@@ -73,7 +73,6 @@ export function activate(context: ExtensionContext) {
   );
 
   const disposable = client.start();
-  client.outputChannel.show();
 
   context.subscriptions.push(disposable);
 }
