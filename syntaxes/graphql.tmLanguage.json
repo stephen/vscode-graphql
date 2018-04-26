@@ -122,7 +122,7 @@
     },
     "type-declaration": {
       "name": "meta.type-declaration.graphql",
-      "begin": "(type|interface)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+((@)\\s*([_A-Za-z][_0-9A-Za-z]*))?\\s*\\{",
+      "begin": "(input|type|interface)\\s+([_A-Za-z][_0-9A-Za-z]+)\\s+((@)\\s*([_A-Za-z][_0-9A-Za-z]*))?\\s*\\{",
       "end": "\\}",
       "beginCaptures": {
         "1": {
