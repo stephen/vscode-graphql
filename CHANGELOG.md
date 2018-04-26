@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.2
+- Add support for syntax highlighting `"""` declarations ([#11](https://github.com/stephen/vscode-graphql/issues/11))
+- Add support for syntax highlighting `input` and `scalar` types ([#11](https://github.com/stephen/vscode-graphql/issues/11))
+
 ## 0.2.1
 - Add support for `.gql` extensions
 
