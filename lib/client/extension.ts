@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
   );
 
   let debugOptions = {
-    execArgv: ["--nolazy", "--debug=6009", "--inspect=localhost:6009"],
+    execArgv: ["--nolazy", "--inspect=localhost:6009"],
   };
 
   let serverOptions: ServerOptions = {
